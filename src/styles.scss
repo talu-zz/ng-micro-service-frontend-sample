@@ -1,1 +1,7 @@
+$font-path: "../node_modules/global-styles/assets/font";
+@import "~global-styles/assets/styles";
+
 /* You can add global styles to this file, and also import other style files */
+a {
+  color: pink !important;
+}

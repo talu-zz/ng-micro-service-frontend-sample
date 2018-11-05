@@ -24,7 +24,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets"              
             ],
             "styles": [
               "src/styles.scss"
@@ -119,6 +119,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "global-styles": {
+      "root": "projects/global-styles",
+      "sourceRoot": "projects/global-styles/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/global-styles/tsconfig.lib.json",
+            "project": "projects/global-styles/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/global-styles/src/test.ts",
+            "tsConfig": "projects/global-styles/tsconfig.spec.json",
+            "karmaConfig": "projects/global-styles/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/global-styles/tsconfig.lib.json",
+              "projects/global-styles/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

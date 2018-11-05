@@ -1,0 +1,17 @@
+{
+  "name": "global-styles",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "scripts": {
+    "copy-files": "npx copyfiles -f './src/assets/*.*' '../../dist/global-styles/assets' && npx copyfiles -f './src/assets/font/*.*' '../../dist/global-styles/assets/font'",
+    "packagr": "ng-packagr -p ng-package.json",
+    "pack": "npm run packagr && npm run copy-files && cd ../../dist/global-styles/ && npm pack"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "ng-packagr": "^4.4.0"
+  }
+}
