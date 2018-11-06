@@ -1,0 +1,19 @@
+<div>
+  Login to github
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input
+      type="text"
+      [(ngModel)]="user.name"
+      name="userName"
+    /><br />
+    {{user.name}}<br />
+    {{user.password}}
+    <input
+      type="password"
+      [(ngModel)]="user.password"
+      name="userName"
+    />
+    <button type="submit">Login</button>
+  </form>
+</div>
